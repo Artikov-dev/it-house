@@ -3,26 +3,19 @@
 
 :root {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  color-scheme: light;
-  --figma-red: #F24E1E;
-  --figma-orange: #FF7262;
-  --figma-purple: #A259FF;
-  --figma-blue: #1ABCFE;
-  --figma-green: #0ACF83;
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #0f0c29;
+  background-color: #050505;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(162, 89, 255, 0.25) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(26, 188, 254, 0.25) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(10, 207, 131, 0.2) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(242, 78, 30, 0.2) 0px, transparent 50%);
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
   background-attachment: fixed;
-  color: #f8fafc;
+  color: #f4f4f5;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -31,7 +24,7 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.97);
+    transform: scale(0.98);
   }
   to {
     opacity: 1;
@@ -42,7 +35,7 @@ body {
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -50,28 +43,10 @@ body {
   }
 }
 
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(2deg);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(162, 89, 255, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 45px rgba(162, 89, 255, 0.65);
-  }
-}
-
 @keyframes certificateEntrance {
   0% {
     opacity: 0;
-    transform: scale(0.9) translateY(30px);
+    transform: scale(0.95) translateY(20px);
   }
   100% {
     opacity: 1;
@@ -80,56 +55,41 @@ body {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-slide-up {
-  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-float {
-  animation: floatSlow 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 3s ease-in-out infinite;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-certificate {
-  animation: certificateEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: certificateEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Glassmorphism Card Utilities */
+/* Glassmorphism Card Utilities for Minimalist Theme */
 .glass-card {
-  background: rgba(26, 22, 54, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-
-.glass-card-light {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 }
 
 .font-outfit {
   font-family: 'Outfit', sans-serif;
 }
 
-/* Custom scrollbar */
+/* Custom Minimalist scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f0c29;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #332d56;
-  border-radius: 4px;
+  background: #27272a;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A259FF;
+  background: #52525b;
 }

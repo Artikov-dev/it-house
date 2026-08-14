@@ -8,7 +8,7 @@ import { calculateScore } from './utils/calculateScore';
 import { generateCertificateId } from './utils/generateCertificateId';
 
 /**
- * Root Application Component managing overall quiz workflow stages in Uzbek.
+ * Root Application Component with Minimalist Black & White Theme.
  */
 export default function App() {
   // Navigation Stage: 'welcome' | 'quiz' | 'result' | 'certificate'
@@ -46,48 +46,34 @@ export default function App() {
     setStage('result');
   };
 
-  // 3. Reset Test (Try Again)
-  const handleTryAgain = () => {
-    setUserAnswers({});
-    setScoreData(null);
-    setStage('quiz');
-  };
-
-  // 4. View Certificate
+  // 3. View Certificate
   const handleGetCertificate = () => {
     setStage('certificate');
   };
 
-  // 5. Navigate back to Results from Certificate
+  // 4. Navigate back to Results from Certificate
   const handleBackToResults = () => {
     setStage('result');
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between selection:bg-[#A259FF] selection:text-white relative">
-      {/* Top Header Branding */}
-      <header className="w-full border-b border-white/10 bg-slate-950/40 backdrop-blur-md sticky top-0 z-50 py-3.5 px-4 sm:px-8">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+    <div className="min-h-screen flex flex-col justify-between bg-[#050505] text-zinc-100 selection:bg-white selection:text-black relative font-sans">
+      {/* Top Minimalist Header */}
+      <header className="w-full border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 py-4 px-4 sm:px-8">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div
             onClick={() => setStage('welcome')}
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex items-center gap-2 cursor-pointer group"
           >
-            {/* Figma Logo Stack Graphic */}
-            <div className="flex -space-x-1 transition-transform group-hover:scale-105">
-              <span className="w-4 h-4 rounded-full bg-[#F24E1E] shadow-sm" />
-              <span className="w-4 h-4 rounded-full bg-[#FF7262] shadow-sm" />
-              <span className="w-4 h-4 rounded-full bg-[#A259FF] shadow-sm" />
-              <span className="w-4 h-4 rounded-full bg-[#1ABCFE] shadow-sm" />
-              <span className="w-4 h-4 rounded-full bg-[#0ACF83] shadow-sm" />
-            </div>
-            <span className="font-outfit font-black text-xl text-white tracking-tight">
-              Figma<span className="text-[#1ABCFE]">Quiz</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-white group-hover:scale-125 transition-transform" />
+            <span className="font-outfit font-black text-lg text-white tracking-widest uppercase">
+              Full<span className="text-zinc-400 font-light">Foundation</span>
             </span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 text-xs font-bold rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
-              9–16 yoshlilar uchun
+            <span className="px-3 py-1 text-xs font-mono text-zinc-300 border border-zinc-700 bg-zinc-900 rounded-full">
+              30 SAVOL | 40 MINUT
             </span>
           </div>
         </div>
@@ -107,7 +93,6 @@ export default function App() {
           <Result
             studentName={studentName}
             scoreData={scoreData}
-            onTryAgain={handleTryAgain}
             onGetCertificate={handleGetCertificate}
           />
         )}
@@ -117,20 +102,17 @@ export default function App() {
             studentName={studentName}
             scoreData={scoreData}
             certificateId={certificateId}
-            onTryAgain={handleTryAgain}
             onBackToResults={handleBackToResults}
           />
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="w-full border-t border-white/10 bg-slate-950/60 backdrop-blur-md py-4 px-4 text-center text-xs text-gray-400">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© 2026 Figma Boshlang‘ich Testi. Yosh dizaynerlar uchun yaratilgan.</p>
-          <p className="flex items-center gap-1.5 font-medium">
-            <span>Yaratilgan:</span>
-            <span className="text-[#FF7262]">♥</span>
-            <span>React + Vite & Tailwind CSS</span>
+      {/* Minimalist Footer */}
+      <footer className="w-full border-t border-zinc-800 bg-zinc-950/90 backdrop-blur-md py-4 px-4 text-center text-xs text-zinc-500 font-mono">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p>© 2026 FULL FOUNDATION. BILIMNI TEKSHIRISH TESTI.</p>
+          <p className="text-zinc-400 font-sans">
+            Minimalist Black & White Edition
           </p>
         </div>
       </footer>

@@ -1,6 +1,6 @@
 /**
- * Generates a unique Certificate ID in the format FIGMA-YEAR-XXXXXX
- * Example: FIGMA-2026-AB1234
+ * Generates a unique Certificate ID in the format FULL-FOUNDATION-YEAR-XXXXXX
+ * Example: FULL-FOUNDATION-2026-AB1234
  */
 export function generateCertificateId() {
   const currentYear = new Date().getFullYear();
@@ -9,5 +9,5 @@ export function generateCertificateId() {
   for (let i = 0; i < 6; i++) {
     randomPart += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  return `FIGMA-${currentYear}-${randomPart}`;
+  return `FULL-FOUNDATION-${currentYear}-${randomPart}`;
 }

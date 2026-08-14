@@ -13,7 +13,6 @@ export async function downloadPdf(element, studentFullName) {
   }
 
   try {
-    // Hide any download/action buttons inside element if present during snapshot
     const canvas = await html2canvas(element, {
       scale: 3, // High resolution crisp rendering
       useCORS: true,
@@ -21,7 +20,6 @@ export async function downloadPdf(element, studentFullName) {
       backgroundColor: '#ffffff',
       logging: false,
       onclone: (clonedDoc) => {
-        // Ensure cloned element is visible and properly sized
         const clonedElement = clonedDoc.querySelector('[data-certificate-root]');
         if (clonedElement) {
           clonedElement.style.transform = 'none';
@@ -44,12 +42,12 @@ export async function downloadPdf(element, studentFullName) {
 
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
 
-    const sanitizedName = (studentFullName || 'Student')
+    const sanitizedName = (studentFullName || 'Oquvchi')
       .trim()
       .replace(/\s+/g, '_')
       .replace(/[^a-zA-Z0-9_-]/g, '');
 
-    const filename = `Figma-Certificate-${sanitizedName || 'Student'}.pdf`;
+    const filename = `Full-Foundation-Certificate-${sanitizedName || 'Oquvchi'}.pdf`;
     pdf.save(filename);
     return true;
   } catch (error) {

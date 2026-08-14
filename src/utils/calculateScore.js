@@ -1,5 +1,5 @@
 /**
- * Calculates score metrics and generates feedback message.
+ * Calculates score metrics and generates feedback message in Uzbek for Full Foundation Test.
  * @param {Array} questions - Original questions list
  * @param {Object} userAnswers - Map of questionId -> selectedOptionId
  */
@@ -22,19 +22,19 @@ export function calculateScore(questions, userAnswers) {
   let badgeColor = "from-emerald-500 to-teal-600";
 
   if (percentage >= 90) {
-    message = "Excellent! 🏆 You have a great understanding of Figma!";
+    message = "Ajoyib natija! 🏆 Siz Full Foundation bo‘yicha mukammal bilimga egasiz!";
     emoji = "🏆";
     badgeColor = "from-amber-400 to-yellow-500";
   } else if (percentage >= 70) {
-    message = "Great job! 🎨 You have a good understanding of Figma!";
+    message = "Barakalla! 🎨 Full Foundation bo‘yicha bilimlaringiz juda yaxshi!";
     emoji = "🎨";
     badgeColor = "from-purple-500 to-indigo-600";
   } else if (percentage >= 50) {
-    message = "Good effort! Keep practicing Figma!";
+    message = "Yaxshi harakat! ⭐ Bilimlaringizni yanada mustahkamlang!";
     emoji = "⭐";
     badgeColor = "from-blue-400 to-cyan-500";
   } else {
-    message = "Keep learning! Practice makes perfect! 🚀";
+    message = "O‘rganishda davom eting! 🚀 Takrorlash va amaliyot muvaffaqiyat kalitidir!";
     emoji = "🚀";
     badgeColor = "from-rose-500 to-pink-600";
   }
