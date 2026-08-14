@@ -109,10 +109,10 @@ export default function Certificate({
             <div className="space-y-2">
               <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 text-white font-extrabold text-xs uppercase tracking-widest mx-auto">
                 <Sparkles className="w-3.5 h-3.5 text-[#1ABCFE]" />
-                <span>Rasmiy Figma Bilim Akademiyasi</span>
+                <span>Figma Bilimni Tekshiruv Testi</span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tight mt-2">
-                Muvaffaqiyatli <span className="text-[#A259FF]">Tugatganlik Sertifikati</span>
+                Bilimni Tekshiruv Testi <span className="text-[#A259FF]">Sertifikati</span>
               </h1>
             </div>
 
@@ -129,11 +129,11 @@ export default function Certificate({
               </div>
 
               <p className="text-sm sm:text-base font-medium text-slate-600 max-w-lg mx-auto leading-relaxed">
-                Figma dasturining boshlang‘ich tushunchalari, ish qurollari va UI/UX dizayn asoslari bo‘yicha test sinovidan muvaffaqiyatli o‘tgani uchun.
+                Figma dasturi bo‘yicha boshlang‘ich bilimni tekshiruv testida ishtirok etgani uchun.
               </p>
 
               <div className="inline-block px-6 py-2 rounded-xl bg-purple-50 text-[#A259FF] font-black text-lg sm:text-xl border border-purple-200">
-                Figma Boshlang‘ich Testi
+                Figma Bilimni Tekshiruv Testi
               </div>
             </div>
 
