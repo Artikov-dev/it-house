@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Data Types — 10 Slaydlik Prezentatsiya</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- Top Progress Bar -->
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="js-badge">
+        <i class="fa-brands fa-js"></i>
+      </div>
+      <div class="header-title">
+        <span class="main-title">JavaScript Data Types</span>
+        <span class="sub-title">10 Slaydlik Boshlang'ich Dars</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="nav-btn-icon" id="btnGrid" title="Barcha slaydlarni ko'rish (Overview)">
+        <i class="fa-solid fa-border-all"></i>
+      </button>
+      <button class="nav-btn-icon" id="btnFullscreen" title="To'liq ekran rejimiga o'tish (F)">
+        <i class="fa-solid fa-expand"></i>
+      </button>
+      <div class="slide-counter-badge" id="slideCounter">1 / 10</div>
+    </div>
+  </header>
+
+  <!-- Slide Deck Main Stage -->
+  <main class="presentation-stage">
+    <div class="slide-container" id="slideContainer">
+      
+      <!-- ================= SLIDE 1 ================= -->
+      <section class="slide active" data-slide="1">
+        <div class="slide-badge">1-SLAYD — KIRISH</div>
+        <h1 class="slide-title">JavaScript Data Types</h1>
+        <p class="slide-subtitle">JavaScript’da ma’lumot turlari haqida asosiy tushuncha</p>
+        
+        <div class="content-grid two-columns">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-cubes icon-yellow"></i> Data Type nima?</h3>
+            <p><strong>Data Type</strong> — o‘zgaruvchida qanday turdagi ma’lumot saqlanayotganini va u ustida qanday amallar bajarish mumkinligini bildiradi.</p>
+            
+            <div class="types-tag-cloud">
+              <span class="type-tag tag-string">String</span>
+              <span class="type-tag tag-number">Number</span>
+              <span class="type-tag tag-bigint">BigInt</span>
+              <span class="type-tag tag-boolean">Boolean</span>
+              <span class="type-tag tag-undefined">Undefined</span>
+              <span class="type-tag tag-null">Null</span>
+              <span class="type-tag tag-symbol">Symbol</span>
+              <span class="type-tag tag-object">Object</span>
+            </div>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span><i class="fa-solid fa-code"></i> example.js</span>
+              <button class="run-code-btn" onclick="runSnippet(1)"><i class="fa-solid fa-play"></i> ISHLATISH</button>
+            </div>
+            <pre class="code-block"><code id="code-snippet-1"><span class="keyword">let</span> <span class="variable">name</span> = <span class="string">"Ali"</span>;       <span class="comment">// String</span>
+<span class="keyword">let</span> <span class="variable">age</span> = <span class="number">20</span>;          <span class="comment">// Number</span>
+<span class="keyword">let</span> <span class="variable">isStudent</span> = <span class="boolean">true</span>;   <span class="comment">// Boolean</span>
+
+<span class="built_in">console</span>.log(<span class="string">"Ismi:"</span>, name, <span class="string">"|"</span>, <span class="keyword">typeof</span> name);
+<span class="built_in">console</span>.log(<span class="string">"Yoshi:"</span>, age, <span class="string">"|"</span>, <span class="keyword">typeof</span> age);
+<span class="built_in">console</span>.log(<span class="string">"Talabami:"</span>, isStudent, <span class="string">"|"</span>, <span class="keyword">typeof</span> isStudent);</code></pre>
+            <div class="terminal-output" id="output-1">
+              <span class="term-prompt">&gt; Natijani ko'rish uchun "ISHLATISH" tugmasini bosing...</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-variable-flow">
+          <div class="var-box">
+            <span class="var-name">let name = "Ali"</span>
+            <span class="var-arrow">➔</span>
+            <span class="var-type type-string-bg">STRING (Matn)</span>
+          </div>
+          <div class="var-box">
+            <span class="var-name">let age = 20</span>
+            <span class="var-arrow">➔</span>
+            <span class="var-type type-number-bg">NUMBER (Son)</span>
+          </div>
+          <div class="var-box">
+            <span class="var-name">let isStudent = true</span>
+            <span class="var-arrow">➔</span>
+            <span class="var-type type-boolean-bg">BOOLEAN (Mantiqiy)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 2 ================= -->
+      <section class="slide" data-slide="2">
+        <div class="slide-badge">2-SLAYD — TASNIFLASH</div>
+        <h1 class="slide-title">JavaScript’dagi 8 ta Data Type</h1>
+        <p class="slide-subtitle">Ma'lumot turlarining 2 ta asosiy guruhi: Primitive va Non-Primitive</p>
+
+        <div class="diagram-tree">
+          <div class="tree-root">JavaScript Data Types (8 ta)</div>
+          <div class="tree-branches">
+            <div class="tree-branch primitive-branch">
+              <div class="branch-header"><i class="fa-solid fa-atom"></i> Primitive Data Types (7 ta)</div>
+              <p class="branch-desc">O'zgarmas, oddiy bitta qiymatni saqlaydi</p>
+              <ul class="branch-list">
+                <li><span class="dot tag-string"></span> <strong>String</strong> — matnli ma'lumotlar</li>
+                <li><span class="dot tag-number"></span> <strong>Number</strong> — butun va o'nlik sonlar</li>
+                <li><span class="dot tag-bigint"></span> <strong>BigInt</strong> — juda katta sonlar</li>
+                <li><span class="dot tag-boolean"></span> <strong>Boolean</strong> — true yoki false</li>
+                <li><span class="dot tag-undefined"></span> <strong>Undefined</strong> — qiymat berilmagan</li>
+                <li><span class="dot tag-null"></span> <strong>Null</strong> — ataylab bo'sh qiymat</li>
+                <li><span class="dot tag-symbol"></span> <strong>Symbol</strong> — noyob identifikator</li>
+              </ul>
+            </div>
+
+            <div class="tree-branch non-primitive-branch">
+              <div class="branch-header"><i class="fa-solid fa-layer-group"></i> Non-Primitive (1 ta)</div>
+              <p class="branch-desc">Murakkab va ko'p ma'lumot saqlovchi struktura</p>
+              <ul class="branch-list">
+                <li><span class="dot tag-object"></span> <strong>Object</strong> — key-value saqlaydi</li>
+              </ul>
+              <div class="important-note">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span><strong>Eslatma:</strong> JavaScript’da Array va Date ham Object turiga kiradi!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 3 ================= -->
+      <section class="slide" data-slide="3">
+        <div class="slide-badge">3-SLAYD — MATN TURI</div>
+        <h1 class="slide-title">String Data Type</h1>
+        <p class="slide-subtitle">Matnli ma’lumotlarni saqlash va qo‘shtirnoqlar bilan ishlash</p>
+
+        <div class="content-grid two-columns">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-quote-right icon-yellow"></i> String nima?</h3>
+            <p><strong>String</strong> — har qanday matnli ketma-ketlik. Qo‘shtirnoq (<code>"..."</code>), birtirnoq (<code>'...'</code>) yoki backtick (<code>`...`</code>) ichida yoziladi.</p>
+
+            <div class="rule-box">
+              <h4><i class="fa-solid fa-check-double"></i> Qo'shtirnoq mosligi rule:</h4>
+              <p>Agar matn ichida qo'shtirnoq bo'lsa, tashqarisiga birtirnoq ishlatiladi:</p>
+            </div>
+            
+            <div class="string-hero-visual">
+              <span class="hero-quote font-mono">"Hello World"</span>
+              <span class="hero-label">LABEL: STRING</span>
+            </div>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span><i class="fa-solid fa-code"></i> string_examples.js</span>
+              <button class="run-code-btn" onclick="runSnippet(3)"><i class="fa-solid fa-play"></i> ISHLATISH</button>
+            </div>
+            <pre class="code-block"><code><span class="keyword">let</span> <span class="variable">name</span> = <span class="string">"Ali"</span>;
+<span class="keyword">let</span> <span class="variable">city</span> = <span class="string">'Tashkent'</span>;
+
+<span class="comment">// String ichida qo‘shtirnoqlar:</span>
+<span class="keyword">let</span> <span class="variable">a</span> = <span class="string">"Bu 'yaxshi' fikr"</span>;
+<span class="keyword">let</span> <span class="variable">b</span> = <span class="string">'Uning ismi "Ali"'</span>;
+<span class="keyword">let</span> <span class="variable">message</span> = <span class="string">"Welcome to JavaScript!"</span>;
+
+<span class="built_in">console</span>.log(<span class="keyword">typeof</span> name); <span class="comment">// "string"</span>
+<span class="built_in">console</span>.log(a);
+<span class="built_in">console</span>.log(b);
+<span class="built_in">console</span>.log(message);</code></pre>
+            <div class="terminal-output" id="output-3">
+              <span class="term-prompt">&gt; Natijani ko'rish uchun "ISHLATISH" tugmasini bosing...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 4 ================= -->
+      <section class="slide" data-slide="4">
+        <div class="slide-badge">4-SLAYD — SONLAR</div>
+        <h1 class="slide-title">Number va BigInt</h1>
+        <p class="slide-subtitle">Matematik sonlar, o'nlik kasrlar va o'ta katta butun sonlar</p>
+
+        <div class="content-grid two-columns">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-calculator icon-yellow"></i> 1. Number</h3>
+            <p>Oddiy butun (integer) va o'nlik kasr (decimal) sonlar Number turiga kiradi.</p>
+            <div class="code-mini">
+              <code>123e5  ➔ 12300000 (Exponential)</code><br>
+              <code>123e-5 ➔ 0.00123</code>
+            </div>
+
+            <h3 class="mt-4"><i class="fa-solid fa-infinity icon-cyan"></i> 2. BigInt</h3>
+            <p>Juda katta butun sonlar uchun ishlatiladi. Oxirida <strong><code>n</code></strong> harfi yoziladi.</p>
+            <div class="comparison-pill">
+              <span class="pill-item">25 ➔ Number</span>
+              <span class="pill-item pill-highlight">25n ➔ BigInt</span>
+            </div>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span><i class="fa-solid fa-code"></i> numbers.js</span>
+              <button class="run-code-btn" onclick="runSnippet(4)"><i class="fa-solid fa-play"></i> ISHLATISH</button>
+            </div>
+            <pre class="code-block"><code><span class="keyword">let</span> <span class="variable">age</span> = <span class="number">20</span>;
+<span class="keyword">let</span> <span class="variable">price</span> = <span class="number">15.5</span>;
+<span class="keyword">let</span> <span class="variable">exp</span> = <span class="number">123e5</span>;
+
+<span class="built_in">console</span>.log(<span class="string">"typeof age:"</span>, <span class="keyword">typeof</span> age);
+<span class="built_in">console</span>.log(<span class="string">"exp qiymati:"</span>, exp);
+
+<span class="comment">// BigInt (oxirida 'n' bor)</span>
+<span class="keyword">let</span> <span class="variable">bigNumber</span> = <span class="number">1234567890123456789012345n</span>;
+<span class="built_in">console</span>.log(<span class="string">"bigNumber:"</span>, bigNumber);
+<span class="built_in">console</span>.log(<span class="string">"typeof bigNumber:"</span>, <span class="keyword">typeof</span> bigNumber);</code></pre>
+            <div class="terminal-output" id="output-4">
+              <span class="term-prompt">&gt; Natijani ko'rish uchun "ISHLATISH" tugmasini bosing...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 5 ================= -->
+      <section class="slide" data-slide="5">
+        <div class="slide-badge">5-SLAYD — MANTIQIY TURI</div>
+        <h1 class="slide-title">Boolean Data Type</h1>
+        <p class="slide-subtitle">Faqat 2 xil qiymat saqlovchi mantiqiy tur: true va false</p>
+
+        <div class="content-grid two-columns">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-[#00f0ff] fa-toggle-on icon-cyan"></i> Boolean qiymatlari</h3>
+            <div class="boolean-toggle-grid">
+              <div class="bool-box bool-true">
+                <i class="fa-solid fa-circle-check"></i>
+                <span class="bool-val">true</span>
+                <span class="bool-meaning">ROST / TO'G'RI</span>
+              </div>
+              <div class="bool-box bool-false">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span class="bool-val">false</span>
+                <span class="bool-meaning">YOLG'ON / NOTO'G'RI</span>
+              </div>
+            </div>
+
+            <div class="use-case-box">
+              <h4><i class="fa-solid fa-[#f7df1e] fa-code-branch"></i> Qayerda ishlatiladi?</h4>
+              <p>Dasturda <code>if</code> shart operatorlari va taqqoslashlarda mantiqiy qaror qabul qilish uchun!</p>
+            </div>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span><i class="fa-solid fa-code"></i> boolean_test.js</span>
+              <button class="run-code-btn" onclick="runSnippet(5)"><i class="fa-solid fa-play"></i> ISHLATISH</button>
+            </div>
+            <pre class="code-block"><code><span class="keyword">let</span> <span class="variable">isStudent</span> = <span class="boolean">true</span>;
+<span class="keyword">let</span> <span class="variable">age</span> = <span class="number">20</span>;
+
+<span class="built_in">console</span>.log(<span class="string">"5 == 5 :"</span>, <span class="number">5</span> == <span class="number">5</span>);   <span class="comment">// true</span>
+<span class="built_in">console</span>.log(<span class="string">"5 == 8 :"</span>, <span class="number">5</span> == <span class="number">8</span>);   <span class="comment">// false</span>
+<span class="built_in">console</span>.log(<span class="string">"age >= 18 :"</span>, age >= <span class="number">18</span>); <span class="comment">// true</span>
+
+<span class="keyword">if</span> (age >= <span class="number">18</span>) {
+    <span class="built_in">console</span>.log(<span class="string">"▶ Kirishga ruxsat berildi!"</span>);
+}</code></pre>
+            <div class="terminal-output" id="output-5">
+              <span class="term-prompt">&gt; Natijani ko'rish uchun "ISHLATISH" tugmasini bosing...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 6 ================= -->
+      <section class="slide" data-slide="6">
+        <div class="slide-badge">6-SLAYD — QIYMATSIZLIK</div>
+        <h1 class="slide-title">Undefined va Null</h1>
+        <p class="slide-subtitle">Qiymat berilmagan va ataylab bo'sh qoldirilgan hollarni solishtirish</p>
+
+        <div class="content-grid two-columns">
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Xususiyat</th>
+                  <th>Undefined</th>
+                  <th>Null</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ma'nosi</strong></td>
+                  <td>Qiymat hali berilmagan</td>
+                  <td>Ataylab bo'sh qiymat berilgan</td>
+                </tr>
+                <tr>
+                  <td><strong>Manba</strong></td>
+                  <td>JavaScript avtomatik beradi</td>
+                  <td>Dasturchi o'zi yozadi</td>
+                </tr>
+                <tr>
+                  <td><strong>Misol</strong></td>
+                  <td><code>let car;</code></td>
+                  <td><code>let user = null;</code></td>
+                </tr>
+                <tr>
+                  <td><strong>typeof natijasi</strong></td>
+                  <td><code>"undefined"</code></td>
+                  <td><code class="text-warning">"object"</code> (JS tarixiy bug!)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span><i class="fa-solid fa-code"></i> undefined_null.js</span>
+              <button class="run-code-btn" onclick="runSnippet(6)"><i class="fa-solid fa-play"></i> ISHLATISH</button>
+            </div>
+            <pre class="code-block"><code><span class="comment">// 1. Undefined</span>
+<span class="keyword">let</span> <span class="variable">car</span>;
+<span class="built_in">console</span>.log(<span class="string">"car qiymati:"</span>, car);      <span class="comment">// undefined</span>
+<span class="built_in">console</span>.log(<span class="string">"typeof car:"</span>, <span class="keyword">typeof</span> car); <span class="comment">// "undefined"</span>
+
+<span class="comment">// 2. Null</span>
+<span class="keyword">let</span> <span class="variable">selectedUser</span> = <span class="keyword">null</span>;
+<span class="built_in">console</span>.log(<span class="string">"selectedUser:"</span>, selectedUser); <span class="comment">// null</span>
+<span class="built_in">console</span>.log(<span class="string">"typeof null:"</span>, <span class="keyword">typeof</span> <span class="keyword">null</span>);  <span class="comment">// "object"</span></code></pre>
+            <div class="terminal-output" id="output-6">
+              <span class="term-prompt">&gt; Natijani ko'rish uchun "ISHLATISH" tugmasini bosing...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 7 ================= -->
+      <section class="slide" data-slide="7">
+        <div class="slide-badge">7-SLAYD — OBJECT</div>
+        <h1 class="slide-title">Object Data Type</h1>
+        <p class="slide-subtitle">Ma’lumotlarni key-value (kalit-qiymat) ko‘rinishida saqlash</p>
+
+        <div class="content-grid two-columns">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-box-archive icon-yellow"></i> Key-Value Struktura</h3>
+            <p>Object bir nechta ma'lumotlarni kalit (key) va uning qiymati (value) juftligida saqlaydi.</p>
+
+            <div class="kv-card-container">
+              <div class="kv-card">
+                <span class="kv-key">firstName:</span>
+                <span class="kv-val">"John"</span>
+              </div>
+              <div class="kv-card">
+                <span class="kv-key">lastName:</span>
+                <span class="kv-val">"Doe"</span>
+              </div>
+              <div class="kv-card">
+                <span class="kv-key">age:</span>
+                <span class="kv-val">20</span>
+              </div>
+            </div>
+
+            <div class="sub-types-note">
+              <p><i class="fa-solid fa-info-circle"></i> <strong>Array va Date</strong> ham <code>typeof</code> bo'yicha <code>"object"</code> qaytaradi!</p>
+            </div>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span><i class="fa-solid fa-code"></i> objects.js</span>
+              <button class="run-code-btn" onclick="runSnippet(7)"><i class="fa-solid fa-play"></i> ISHLATISH</button>
+            </div>
+            <pre class="code-block"><code><span class="keyword">const</span> <span class="variable">person</span> = {
+    firstName: <span class="string">"John"</span>,
+    lastName: <span class="string">"Doe"</span>,
+    age: <span class="number">20</span>
+};
+
+<span class="built_in">console</span>.log(<span class="string">"Ismi:"</span>, person.firstName); <span class="comment">// John</span>
+<span class="built_in">console</span>.log(<span class="string">"Yoshi:"</span>, person.age);       <span class="comment">// 20</span>
+
+<span class="comment">// Array & Date ham Object:</span>
+<span class="keyword">const</span> <span class="variable">cars</span> = [<span class="string">"BMW"</span>, <span class="string">"Volvo"</span>];
+<span class="built_in">console</span>.log(<span class="string">"typeof cars:"</span>, <span class="keyword">typeof</span> cars); <span class="comment">// "object"</span></code></pre>
+            <div class="terminal-output" id="output-7">
+              <span class="term-prompt">&gt; Natijani ko'rish uchun "ISHLATISH" tugmasini bosing...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 8 ================= -->
+      <section class="slide" data-slide="8">
+        <div class="slide-badge">8-SLAYD — SYMBOL</div>
+        <h1 class="slide-title">Symbol Data Type</h1>
+        <p class="slide-subtitle">Noyob va o‘zgarmas (unique & immutable) identifikator yaratish</p>
+
+        <div class="content-grid two-columns">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-fingerprint icon-yellow"></i> Symbol nima?</h3>
+            <p><strong>Symbol</strong> har safar chaqirilganda tamomila <strong>noyob (unique)</strong> va takrorlanmas ID qiymat hosil qiladi.</p>
+
+            <div class="symbol-diagram">
+              <div class="sym-box">
+                <span class="sym-title">Symbol("id")</span>
+                <span class="sym-id">ID_#984124A</span>
+              </div>
+              <div class="sym-vs font-mono">!==</div>
+              <div class="sym-box">
+                <span class="sym-title">Symbol("id")</span>
+                <span class="sym-id">ID_#338199B</span>
+              </div>
+            </div>
+            
+            <p class="text-sm text-muted">Bir xil tavsif berilsa ham, ular teng bo'lmaydi!</p>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span><i class="fa-solid fa-code"></i> symbol_test.js</span>
+              <button class="run-code-btn" onclick="runSnippet(8)"><i class="fa-solid fa-play"></i> ISHLATISH</button>
+            </div>
+            <pre class="code-block"><code><span class="keyword">const</span> <span class="variable">id1</span> = Symbol(<span class="string">"id"</span>);
+<span class="keyword">const</span> <span class="variable">id2</span> = Symbol(<span class="string">"id"</span>);
+
+<span class="built_in">console</span>.log(<span class="string">"id1 === id2 :"</span>, id1 === id2); <span class="comment">// false!</span>
+<span class="built_in">console</span>.log(<span class="string">"typeof id1 :"</span>, <span class="keyword">typeof</span> id1);   <span class="comment">// "symbol"</span>
+
+<span class="comment">// Asosiy tushuncha:</span>
+<span class="comment">// Symbol -> unique / noyob qiymat</span></code></pre>
+            <div class="terminal-output" id="output-8">
+              <span class="term-prompt">&gt; Natijani ko'rish uchun "ISHLATISH" tugmasini bosing...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 9 ================= -->
+      <section class="slide" data-slide="9">
+        <div class="slide-badge">9-SLAYD — OPERATOR</div>
+        <h1 class="slide-title">typeof Operatori</h1>
+        <p class="slide-subtitle">O'zgaruvchi va qiymatlarning ma'lumot turini aniqlash</p>
+
+        <div class="content-grid two-columns">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-magnifying-glass icon-yellow"></i> Quick Reference Jadval</h3>
+            <table class="quick-table">
+              <thead>
+                <tr>
+                  <th>Qiymat (Value)</th>
+                  <th><code>typeof</code> Natijasi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>"Hello"</code></td><td><span class="tag-string">"string"</span></td></tr>
+                <tr><td><code>25</code></td><td><span class="tag-number">"number"</span></td></tr>
+                <tr><td><code>25n</code></td><td><span class="tag-bigint">"bigint"</span></td></tr>
+                <tr><td><code>true</code></td><td><span class="tag-boolean">"boolean"</span></td></tr>
+                <tr><td><code>undefined</code></td><td><span class="tag-undefined">"undefined"</span></td></tr>
+                <tr><td><code>null</code></td><td><span class="tag-null">"object"</span> (JS quirk)</td></tr>
+                <tr><td><code>Symbol()</code></td><td><span class="tag-symbol">"symbol"</span></td></tr>
+                <tr><td><code>{}</code></td><td><span class="tag-object">"object"</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span><i class="fa-solid fa-code"></i> typeof_demo.js</span>
+              <button class="run-code-btn" onclick="runSnippet(9)"><i class="fa-solid fa-play"></i> ISHLATISH</button>
+            </div>
+            <pre class="code-block"><code><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"Hello"</span>);     <span class="comment">// "string"</span>
+<span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">25</span>);          <span class="comment">// "number"</span>
+<span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">25n</span>);         <span class="comment">// "bigint"</span>
+<span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="boolean">true</span>);        <span class="comment">// "boolean"</span>
+<span class="built_in">console</span>.log(<span class="keyword">typeof</span> undefined);   <span class="comment">// "undefined"</span>
+<span class="built_in">console</span>.log(<span class="keyword">typeof</span> Symbol(<span class="string">"id"</span>));<span class="comment">// "symbol"</span>
+<span class="built_in">console</span>.log(<span class="keyword">typeof</span> {});          <span class="comment">// "object"</span>
+<span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="keyword">null</span>);        <span class="comment">// "object"</span></code></pre>
+            <div class="terminal-output" id="output-9">
+              <span class="term-prompt">&gt; Natijani ko'rish uchun "ISHLATISH" tugmasini bosing...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SLIDE 10 ================= -->
+      <section class="slide" data-slide="10">
+        <div class="slide-badge">10-SLAYD — TEST VA XULOSA</div>
+        <h1 class="slide-title">Mini Quiz + Xulosa</h1>
+        <p class="slide-subtitle">Bilimlarni mustahkamlash uchun interaktiv test</p>
+
+        <div class="content-grid two-columns">
+          <div class="quiz-container">
+            <div class="quiz-card" id="quizCard">
+              <div class="quiz-progress-num">SAVOL 1 / 5</div>
+              <h3 class="quiz-question" id="quizQuestion">Loading question...</h3>
+              <div class="quiz-options" id="quizOptions"></div>
+              <div class="quiz-feedback" id="quizFeedback"></div>
+            </div>
+          </div>
+
+          <div class="summary-card">
+            <h3><i class="fa-solid fa-award icon-yellow"></i> Dars Xulosasi</h3>
+            <p>JavaScript’da 8 ta asosiy ma'lumot turi mavjud:</p>
+            <div class="summary-tags-grid">
+              <span><strong>String</strong>: matn</span>
+              <span><strong>Number</strong>: son</span>
+              <span><strong>BigInt</strong>: katta son</span>
+              <span><strong>Boolean</strong>: true/false</span>
+              <span><strong>Undefined</strong>: qiymatsiz</span>
+              <span><strong>Null</strong>: bo'sh qiymat</span>
+              <span><strong>Symbol</strong>: unique ID</span>
+              <span><strong>Object</strong>: key-value</span>
+            </div>
+
+            <div class="next-step-box">
+              <span class="next-title">Keyingi qadamlar:</span>
+              <span class="next-path font-mono">Variables ➔ Operators ➔ Conditions ➔ Loops</span>
+            </div>
+
+            <div class="quote-box">
+              <i class="fa-solid fa-quote-left"></i>
+              <p>"Data type'larni tushunsangiz, JavaScript kodini tushunish ancha osonlashadi."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <footer class="app-footer">
+    <button class="nav-control-btn" id="btnPrev">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Oldingi</span>
+    </button>
+
+    <div class="slide-dots" id="slideDots"></div>
+
+    <button class="nav-control-btn btn-primary" id="btnNext">
+      <span>Keyingi</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </footer>
+
+  <!-- Slide Overview Grid Drawer Modal -->
+  <div class="grid-modal" id="gridModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-border-all"></i> Barcha Slaydlar Mundarijasi</h2>
+        <button class="modal-close" id="btnCloseGrid"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="grid-slides-list" id="gridSlidesList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
